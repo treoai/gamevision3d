@@ -1,6 +1,8 @@
 # GameVision3D
 
-Codebase for the **SCAI AI League**.
+Codebase for Treo AI GameVision3D for **SCAI AI League**.
+
+This code demonstrates functionalities for player & ball tracking as well as field line callibration.
 
 ## Installation
 
