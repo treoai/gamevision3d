@@ -424,7 +424,8 @@ def run_all(source_video_path: str, device: str) -> Iterator[np.ndarray]:
                     radar_resized, 0, pad_h, 0, 0, cv2.BORDER_CONSTANT, value=(0, 0, 0))
 
             # Concatenate images side by side
-            combined = np.hstack((annotated_frame, radar_resized))
+            combined = np.hstack((annotated_frame, radar_resized))            
+            combined = sv.resize_image(combined, (annotated_frame.shape[1], h))
             yield combined
 
 
@@ -503,7 +504,6 @@ def run_radar(source_video_path: str, device: str) -> Iterator[np.ndarray]:
                     0
                 )
             )
-
             yield new_frame
 
 def main(source_video_path: str, target_video_path: str, device: str, mode: Mode) -> None:
